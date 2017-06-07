@@ -8,30 +8,33 @@ public class Smileys {
          printWithSmileys("Interface");
     }
 
-    
-    
-     private static void printWithSmileys(String characterString){
+        private static void printWithSmileys(String characterString) {
         String smile = ":)";
-         int lenght = calcolaLenght(characterString, smile);
-        
-          printSmile(lenght/2, smile);               
-          if (characterString.length() %2 == 0)
-          System.out.println(smile+" " + characterString + " " + smile);
-          else
-              System.out.println(smile+" " + characterString + "  " + smile);
-          printSmile(lenght/2, smile);   
-                
-     }
+        int lenght = calcolaLenght(characterString, smile);
+
+        printSmile(lenght, smile);
+        createMiddleString(characterString, smile);
+        printSmile(lenght, smile);
+
+    }
+
+    private static void createMiddleString(String characterString, String smile) {
+        if (characterString.length() % 2 == 0) {
+            System.out.println(smile + " " + characterString + " " + smile);
+        } else {
+            System.out.println(smile + " " + characterString + "  " + smile);
+        }
+    }
 
     private static int calcolaLenght(String characterString, String smile) {
         int lenght;
         if (characterString.length() % 2 == 1) {
             lenght = characterString.length() + 3 + 2 * smile.length();
-            
+
         } else {
             lenght = characterString.length() + 2 + 2 * smile.length();
         }
-        return lenght;
+        return lenght / 2;
     }
      
   
