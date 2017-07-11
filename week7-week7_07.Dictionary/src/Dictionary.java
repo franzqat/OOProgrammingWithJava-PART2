@@ -31,16 +31,12 @@ public class Dictionary {
          return dictionary.size();
      }
      public ArrayList<String> translationList(){
-       return dictionary.entrySet()
-                 .stream()
-             //    .reduce(s->dictionary.keySet() + " = " + dictionary.get(dictionary.keySet()))
-                 .collect(Collectors.toList());
-         
-      /*   
-         ArrayList<String> t = new ArrayList<String>();
-         for (String s : dictionary.keySet())
-             t.add(s);
-         return t;*/
+                
+        ArrayList<String> t = new ArrayList<>();
+         dictionary.keySet().stream().forEach((s) -> {
+             t.add(s + " = " + dictionary.get(s));
+        });
+        return t;
                      
      }
 }
