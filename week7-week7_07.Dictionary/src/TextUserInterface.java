@@ -23,10 +23,12 @@ public class TextUserInterface {
   
     public void start() {
         printMenu();
-        while (true) {
+        int i = 1;
+        while (i==1) {
             switch (reader.nextLine()) {
                 case ("quit"):
                     quit();
+                    i=0;
                     break;
                 case ("translate"):
                     translate();
@@ -58,7 +60,7 @@ public class TextUserInterface {
     
     private void quit(){
         System.out.println("Cheers!");
-        System.exit(0);
+      //  System.exit(0);
         
     }
     
